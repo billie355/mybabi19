@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Girlfriend</title>
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#ff6b9d',
+            secondary: '#8a2be2'
+          },
+          borderRadius: {
+            button: '8px'
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+      background-color: #fff;
+    }
+    .animated-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background: linear-gradient(45deg, #ffccd5, #c8b6ff, #b8c0ff, #ffd6ff);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
+    }
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .image-container {
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    .image-container:hover {
+      transform: scale(1.03);
+    }
+    .heart-icon {
+      position: absolute;
+      color: #ff6b9d;
+      opacity: 0;
+      transform: scale(0);
+      animation: heartBeat 1.5s ease-in-out infinite;
+    }
+    @keyframes heartBeat {
+      0% { transform: scale(0.8); opacity: 0.7; }
+      50% { transform: scale(1.1); opacity: 1; }
+      100% { transform: scale(0.8); opacity: 0.7; }
+    }
+    .title {
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .warning-box {
+      position: relative;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+      100% { transform: scale(1); }
+    }
+    .warning-icon {
+      animation: shake 2s ease-in-out infinite;
+    }
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      10%, 30%, 50%, 70%, 90% { transform: translateX(-2px); }
+      20%, 40%, 60%, 80% { transform: translateX(2px); }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex items-center justify-center">
+  <div class="animated-bg"></div>
+
+  <div class="container mx-auto px-4 py-12 max-w-4xl">
+    <div class="flex flex-col items-center justify-center">
+      <div class="image-container rounded-2xl mb-8 relative w-full max-w-[500px] h-auto">
+        <img src="babiiii.jpg"
+          alt="My Girlfriend" class="rounded-2xl object-cover w-full h-auto max-h-[600px] object-top" />
+
+        <div class="heart-icon absolute top-4 right-4 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center">
+          <i class="ri-heart-fill ri-2x"></i>
+        </div>
+        <div class="heart-icon absolute bottom-4 left-4 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center" style="animation-delay: 0.5s;">
+          <i class="ri-heart-fill ri-2x"></i>
+        </div>
+        <div class="heart-icon absolute top-4 left-4 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center" style="animation-delay: 1s;">
+          <i class="ri-heart-fill ri-2x"></i>
+        </div>
+        <div class="heart-icon absolute bottom-4 right-4 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center" style="animation-delay: 1.5s;">
+          <i class="ri-heart-fill ri-2x"></i>
+        </div>
+      </div>
+
+      <h1 class="title text-3xl sm:text-4xl md:text-5xl font-['Pacifico'] text-primary mb-6 sm:mb-8 text-center">My Girlfriend</h1>
+
+      <div class="warning-box bg-white bg-opacity-80 backdrop-blur-sm p-5 sm:p-6 rounded-xl border-2 border-primary shadow-lg w-full max-w-lg">
+        <div class="flex items-center gap-4">
+          <div class="warning-icon w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-primary bg-opacity-20 rounded-full flex-shrink-0">
+            <i class="ri-alarm-warning-fill ri-xl text-primary"></i>
+          </div>
+          <p class="text-base sm:text-lg md:text-xl font-semibold text-gray-800">I have a pretty girlfriend, stay away!</p>
+        </div>
+
+        <div class="mt-4 text-sm text-gray-600">
+          <p class="mb-2">⚠️ Notice to all potential admirers:</p>
+          <ul class="list-disc pl-5 space-y-1">
+            <li>My heart is taken</li>
+            <li>She is the most beautiful person in the world</li>
+            <li>We are happily committed to each other</li>
+            <li>Please respect our relationship</li>
+          </ul>
+        </div>
+
+        <div class="mt-4 flex justify-center">
+          <button class="bg-primary hover:bg-opacity-90 text-white font-medium py-2 px-4 sm:px-6 rounded-button whitespace-nowrap flex items-center gap-2 transition-all">
+            <i class="ri-check-line"></i>
+            I understand
+          </button>
+        </div>
+      </div>
+
+      <p class="text-center text-xs sm:text-sm text-gray-600 mt-6 sm:mt-8">
+        
+
+      </p>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const heartIcons = document.querySelectorAll('.heart-icon');
+      heartIcons.forEach(icon => {
+        icon.style.opacity = '1';
+      });
+
+      const button = document.querySelector('button');
+      button.addEventListener('click', function () {
+        alert('Thank you for respecting our relationship! 💖');
+      });
+    });
+  </script>
+</body>
+</html>
